@@ -9,8 +9,11 @@ class hi extends StatefulWidget {
 class _hiState extends State<hi> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.red,
+    return Scaffold(
+      body:
+      Container(
+        color: Colors.blueGrey,
+      ),
     );
   }
 }
