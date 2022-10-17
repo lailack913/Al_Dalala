@@ -1,18 +1,31 @@
+import 'package:al_dalala/1_home/home_page.dart';
 import 'package:flutter/material.dart';
-class hi extends StatefulWidget {
-  const hi({Key? key}) : super(key: key);
+
+class splash extends StatefulWidget {
+  const splash({Key? key}) : super(key: key);
 
   @override
-  State<hi> createState() => _hiState();
+  State<splash> createState() => _splashState();
 }
 
-class _hiState extends State<hi> {
+class _splashState extends State<splash> {
+  Future Delay() async{
+    await Future.delayed( const Duration(seconds: 3));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => home()));
+  }
+  @override
+  void initState(){
+    super.initState();
+    Delay();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black26,
       body:
       Container(
-        color: Colors.blueGrey,
+        height: 73, width: 73,
+        color: Colors.white70,
       ),
     );
   }
