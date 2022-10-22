@@ -6,5 +6,5 @@ import 'package:al_dalala/2_account/c_restoration/restor_new_password.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp( MaterialApp(home: restor_pn(),));
+  runApp( MaterialApp(home: login(),));
 }

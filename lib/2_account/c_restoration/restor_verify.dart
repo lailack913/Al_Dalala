@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_verification_code/flutter_verification_code.dart';
+
 class restor_verify extends StatefulWidget {
   const restor_verify({Key? key}) : super(key: key);
 
@@ -39,7 +40,7 @@ class _restor_verifyState extends State<restor_verify> {
                 .amber, // If this is null it will use primaryColor: Colors.red from Theme
             length: 4,
             cursorColor:
-            Colors.blue, // If this is null it will default to the ambient
+                Colors.blue, // If this is null it will default to the ambient
             // clearAll is NOT required, you can delete it
             // takes any widget, so you can implement your design
             clearAll: Padding(
