@@ -1,18 +1,15 @@
-import 'dart:convert';
-
-import 'package:al_dalala/2_account/a_sign%20in/creat_account.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-
-import '../../1_home/home_page.dart';
+import 'dart:convert';
 import '../../dataa.dart';
+import '../../1_home/home_page.dart';
+import '../a_sign in/creat_account.dart';
+
 
 var phoneController = TextEditingController();
 var passController = TextEditingController();
 
 class login extends StatefulWidget {
-  const login({Key? key}) : super(key: key);
-
   @override
   State<login> createState() => _loginState();
 }

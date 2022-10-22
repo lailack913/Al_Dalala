@@ -1,3 +1,12 @@
-// TODO Implement this library.
-var u_phone = "";
-var password = "";
+var name="";
+var phone="";
+var nameup="";
+var phoneup="";
+var unversyup="";
+var password_confirmup="";
+var password_confirmupp="";
+var passwordup="";
+var fullname="";
+var u_phone="";
+var password="";
+var password_confirm="";
