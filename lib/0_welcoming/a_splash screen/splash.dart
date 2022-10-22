@@ -1,4 +1,5 @@
 import 'package:al_dalala/1_home/home_page.dart';
+import 'package:al_dalala/BottomNavigationBar/BottomNavigationBar.dart';
 import 'package:flutter/material.dart';
 
 class splash extends StatefulWidget {
@@ -11,7 +12,7 @@ class splash extends StatefulWidget {
 class _splashState extends State<splash> {
   Future Delay() async{
     await Future.delayed( const Duration(seconds: 3));
-    Navigator.push(context, MaterialPageRoute(builder: (context) => home_page()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => bottomN()));
   }
   @override
   void initState(){

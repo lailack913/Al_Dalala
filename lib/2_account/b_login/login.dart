@@ -36,7 +36,7 @@ class _loginState extends State<login> {
         if (list1[i]["u_phone"] == u_phone &&
             list1[i]["password"] == password) {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => home()));
+              .push(MaterialPageRoute(builder: (context) => home_page()));
         } else
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (context) => creat_account()));
