@@ -17,7 +17,8 @@ class _restor_verifyState extends State<restor_verify> {
       appBar: AppBar(
         title: const Center(
           child: Text('Example verify code'),
-        ),
+        )
+
       ),
       body: Column(
         children: [

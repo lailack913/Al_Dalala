@@ -20,7 +20,7 @@ class creat_account extends StatefulWidget {
 class _creat_accountState extends State<creat_account> {
   bool check = false;
   Future Add_data() async {
-    var url = Uri.parse("http://localhost:4000/add");
+    var url = Uri.parse("http://localhost:4000/r");
     Map<String, String> headers = {"Content-type": "application/json"};
 
     String json = '{"fullname": "$nameup",'
@@ -201,8 +201,8 @@ class _creat_accountState extends State<creat_account> {
                         ),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(
-                          20,
-                        ))),
+                              20,
+                            ))),
                   ),
                 )
               ],

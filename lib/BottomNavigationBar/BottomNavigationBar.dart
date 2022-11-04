@@ -9,7 +9,7 @@ class bottomN extends StatefulWidget {
 
 class _bottomNState extends State<bottomN> {
 
-  var cureenrIndex = 0;
+  var cureenrIndex = 3;
 
   Widget callPage(){
 
@@ -18,10 +18,12 @@ class _bottomNState extends State<bottomN> {
   }
 
   static List<Widget> _widgetOptions = <Widget>[
-    home_page(),
+
+    Center(child: Text("account"),),
     Center(child: Text("add"),),
     Center(child: Text("save"),),
-    Center(child: Text("account"),),
+    home_page(),
+
   ];
   @override
   Widget build(BuildContext context) {
@@ -31,8 +33,8 @@ class _bottomNState extends State<bottomN> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             backgroundColor: Colors.teal,
-            icon: Icon(Icons.home),
-            label: 'home',
+            icon: Icon(Icons.account_circle_rounded),
+            label: 'account',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.add),
@@ -43,9 +45,13 @@ class _bottomNState extends State<bottomN> {
             label: 'save',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle_rounded),
-            label: 'account',
+            backgroundColor: Colors.teal,
+            icon: Icon(Icons.home),
+            label: 'home',
           ),
+
+
+
         ],
         onTap: (v){
           setState(() {

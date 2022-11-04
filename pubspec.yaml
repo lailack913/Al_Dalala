@@ -41,6 +41,7 @@ dependencies:
   animate_do: any
   smooth_page_indicator: ^1.0.0+2
   intro_screen_onboarding_flutter: ^1.0.0
+  flutter_inset_box_shadow: ^1.0.7
 
 
 dev_dependencies:

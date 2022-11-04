@@ -10,6 +10,8 @@ class form_store extends StatefulWidget {
 class _form_storeState extends State<form_store> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+
+    );
   }
 }

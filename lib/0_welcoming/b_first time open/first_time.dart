@@ -1,3 +1,4 @@
+import 'package:al_dalala/BottomNavigationBar/BottomNavigationBar.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -152,6 +153,8 @@ class _first_timeState extends State<first_time> {
                         size: size,
                         textTheme: textTheme,
                         onTap: () {
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder:(context) => bottomN( )));
                           setState(() {
                             pageController.animateToPage(2,
                                 duration: const Duration(milliseconds: 1000),
