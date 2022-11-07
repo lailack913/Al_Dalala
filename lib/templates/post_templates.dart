@@ -9,140 +9,140 @@ class post_templates {
       double post_height, double photo_hight
       )
   {
-   return Container(
-     height: post_height,
-     decoration: BoxDecoration(
-         border: Border.all(color: Colors.grey, width: 2),
-         borderRadius: BorderRadius.all(Radius.circular(19))
-     ),
-     child: Column(
-       children: [
-         Stack(
-           children: [
-             Container(
-                 height: photo_hight,
-                 decoration: BoxDecoration(
-                     color: Colors.grey,
-                     image: DecorationImage(
-                       image: NetworkImage("$main_img",),
-                       fit: BoxFit.cover,
-                     ),
-                     borderRadius: BorderRadius.vertical(top: Radius.circular(17))
-                 )
-             ),
-             Positioned(
-               top: 6,
-               right: 10,
-               child: Container(
-                   padding: EdgeInsets.only(left: 0),
-                   width: 39, height: 50,
-                   decoration: BoxDecoration(
-                       color: Colors.white.withOpacity(0.5),
-                       borderRadius: BorderRadius.circular(13),
-                       boxShadow: [
-                       ]
-                   ),
-                   child:
-                   Icon( Icons.bookmark_border, color: Colors.grey, size: 30,)
-               ),
-             )
-           ],
-         ),
-         Padding(padding: EdgeInsets.fromLTRB(17, 13, 17, 0),
-           child:
-           Row(
-             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-             children: [
-               Text("المساحة:$area م", style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),),
-               Text("$residential_type-$sell_rent", style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),)
-             ],
-           ),
-         ),
-         Padding(padding: EdgeInsets.fromLTRB(17, 1, 17, 0),
-           child:
-           Row(
-             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-             children: [
-               Text("السعر: $price $price_type", style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),),
-               Text("$city-$district", style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),),
-             ],
-           ),
-         ),
-         Padding(padding: EdgeInsets.fromLTRB(17, 1.5, 17, 0),
-           child:
-           Row(
-             mainAxisAlignment: MainAxisAlignment.spaceAround,
-             children: [
-               Icon(Icons.arrow_back_ios_new),
-               Text("المزيد ", style: TextStyle(fontSize: 21.3, fontWeight: FontWeight.w500),),
-               Container(
-                 height: 37, width: 65,
-                 decoration: BoxDecoration(
-                     border: Border.all(color: Colors.grey, width: 2),
-                     borderRadius: BorderRadius.all(Radius.circular(11))
-                 ),
-                 child: Row(
-                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                   children: [
-                     Text("حمام"),
-                     Text("$bathroom"),
-                     Icon(Icons.cabin, size: 17,)
-                   ],
-                 ),
-               ),
-               Container(
-                 height: 37, width: 65,
-                 decoration: BoxDecoration(
-                     border: Border.all(color: Colors.grey, width: 2),
-                     borderRadius: BorderRadius.all(Radius.circular(11))
-                 ),
-                 child: Row(
-                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                   children: [
-                     Text("مطبخ"),
-                     Text("$kitchen"),
-                     Icon(Icons.cabin, size: 17,)
-                   ],
-                 ),
-               ),
-               Container(
-                 height: 37, width: 65,
-                 decoration: BoxDecoration(
-                     border: Border.all(color: Colors.grey, width: 2),
-                     borderRadius: BorderRadius.all(Radius.circular(11))
-                 ),
-                 child: Row(
-                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                   children: [
-                     Text("صالة"),
-                     Text("$hall"),
-                     Icon(Icons.cabin, size: 17,)
-                   ],
-                 ),
-               ),
-               Container(
-                 height: 37, width: 65,
-                 decoration: BoxDecoration(
-                     border: Border.all(color: Colors.grey, width: 2),
-                     borderRadius: BorderRadius.all(Radius.circular(11))
-                 ),
-                 child: Row(
-                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                   children: [
-                     Text("غرف"),
-                     Text("$room"),
-                     Icon(Icons.cabin, size: 17,)
-                   ],
-                 ),
-               ),
-             ],
-           ),
-         )
+    return Container(
+      height: post_height,
+      decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey, width: 2),
+          borderRadius: BorderRadius.all(Radius.circular(19))
+      ),
+      child: Column(
+        children: [
+          Stack(
+            children: [
+              Container(
+                  height: photo_hight,
+                  decoration: BoxDecoration(
+                      color: Colors.grey,
+                      image: DecorationImage(
+                        image: NetworkImage("$main_img",),
+                        fit: BoxFit.cover,
+                      ),
+                      borderRadius: BorderRadius.vertical(top: Radius.circular(17))
+                  )
+              ),
+              Positioned(
+                top: 6,
+                right: 10,
+                child: Container(
+                    padding: EdgeInsets.only(left: 0),
+                    width: 39, height: 50,
+                    decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.5),
+                        borderRadius: BorderRadius.circular(13),
+                        boxShadow: [
+                        ]
+                    ),
+                    child:
+                    Icon( Icons.bookmark_border, color: Colors.grey, size: 30,)
+                ),
+              )
+            ],
+          ),
+          Padding(padding: EdgeInsets.fromLTRB(17, 13, 17, 0),
+            child:
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("المساحة:$area م", style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),),
+                Text("$residential_type-$sell_rent", style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),)
+              ],
+            ),
+          ),
+          Padding(padding: EdgeInsets.fromLTRB(17, 1, 17, 0),
+            child:
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("السعر: $price $price_type", style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),),
+                Text("$city-$district", style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),),
+              ],
+            ),
+          ),
+          Padding(padding: EdgeInsets.fromLTRB(17, 1.5, 17, 0),
+            child:
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Icon(Icons.arrow_back_ios_new),
+                Text("المزيد ", style: TextStyle(fontSize: 21.3, fontWeight: FontWeight.w500),),
+                Container(
+                  height: 37, width: 65,
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey, width: 2),
+                      borderRadius: BorderRadius.all(Radius.circular(11))
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text("حمام"),
+                      Text("$bathroom"),
+                      Icon(Icons.cabin, size: 17,)
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 37, width: 65,
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey, width: 2),
+                      borderRadius: BorderRadius.all(Radius.circular(11))
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text("مطبخ"),
+                      Text("$kitchen"),
+                      Icon(Icons.cabin, size: 17,)
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 37, width: 65,
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey, width: 2),
+                      borderRadius: BorderRadius.all(Radius.circular(11))
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text("صالة"),
+                      Text("$hall"),
+                      Icon(Icons.cabin, size: 17,)
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 37, width: 65,
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey, width: 2),
+                      borderRadius: BorderRadius.all(Radius.circular(11))
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text("غرف"),
+                      Text("$room"),
+                      Icon(Icons.cabin, size: 17,)
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          )
 
 
-       ],
-     ),
-   );
+        ],
+      ),
+    );
   }
 
   // make a function to build the posts of land
@@ -340,78 +340,78 @@ class post_templates {
       )
   {
     return Container(
-    height: post_height,
-    decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey, width: 2),
-        borderRadius: BorderRadius.all(Radius.circular(19))
-    ),
-    child: Column(
-      children: [
-        Stack(
-          children: [
-            Container(
-                height: photo_hight,
-                decoration: BoxDecoration(
-                    color: Colors.grey,
-                    image: DecorationImage(
-                      image: NetworkImage("$main_img",),
-                      fit: BoxFit.cover,
-                    ),
-                    borderRadius: BorderRadius.vertical(top: Radius.circular(17))
-                )
-            ),
-            Positioned(
-              top: 6,
-              right: 10,
-              child: Container(
-                  padding: EdgeInsets.only(left: 0),
-                  width: 39, height: 50,
+      height: post_height,
+      decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey, width: 2),
+          borderRadius: BorderRadius.all(Radius.circular(19))
+      ),
+      child: Column(
+        children: [
+          Stack(
+            children: [
+              Container(
+                  height: photo_hight,
                   decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.5),
-                      borderRadius: BorderRadius.circular(13),
-                      boxShadow: [
-                      ]
-                  ),
-                  child:
-                  Icon( Icons.bookmark_border, color: Colors.grey, size: 30,)
+                      color: Colors.grey,
+                      image: DecorationImage(
+                        image: NetworkImage("$main_img",),
+                        fit: BoxFit.cover,
+                      ),
+                      borderRadius: BorderRadius.vertical(top: Radius.circular(17))
+                  )
               ),
-            )
-          ],
-        ),
-        Padding(padding: EdgeInsets.fromLTRB(17, 13, 17, 0),
-          child:
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text("المساحة:$area م", style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),),
-              Text("$type-$sell_rent", style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),)
+              Positioned(
+                top: 6,
+                right: 10,
+                child: Container(
+                    padding: EdgeInsets.only(left: 0),
+                    width: 39, height: 50,
+                    decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.5),
+                        borderRadius: BorderRadius.circular(13),
+                        boxShadow: [
+                        ]
+                    ),
+                    child:
+                    Icon( Icons.bookmark_border, color: Colors.grey, size: 30,)
+                ),
+              )
             ],
           ),
-        ),
-        Padding(padding: EdgeInsets.fromLTRB(17, 1, 17, 0),
-          child:
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text("السعر: $price $price_type", style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),),
-              Text("$city-$district", style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),),
-            ],
+          Padding(padding: EdgeInsets.fromLTRB(17, 13, 17, 0),
+            child:
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("المساحة:$area م", style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),),
+                Text("$type-$sell_rent", style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),)
+              ],
+            ),
           ),
-        ),
-        Padding(padding: EdgeInsets.fromLTRB(17, 1.5, 17, 0),
-          child:
-          Row(
-            children: [
-              Icon(Icons.arrow_back_ios_new),
-              Text("المزيد ", style: TextStyle(fontSize: 21.3, fontWeight: FontWeight.w500),),
-            ],
+          Padding(padding: EdgeInsets.fromLTRB(17, 1, 17, 0),
+            child:
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("السعر: $price $price_type", style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),),
+                Text("$city-$district", style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),),
+              ],
+            ),
           ),
-        )
+          Padding(padding: EdgeInsets.fromLTRB(17, 1.5, 17, 0),
+            child:
+            Row(
+              children: [
+                Icon(Icons.arrow_back_ios_new),
+                Text("المزيد ", style: TextStyle(fontSize: 21.3, fontWeight: FontWeight.w500),),
+              ],
+            ),
+          )
 
 
-      ],
-    ),
-  );
+        ],
+      ),
+    );
 
   }
 

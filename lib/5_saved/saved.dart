@@ -28,7 +28,7 @@ class _savedState extends State<saved> {
           children: [
             Container(
               width: MediaQuery.of(context).size.width/1.05,
-             alignment: Alignment.center,
+              alignment: Alignment.center,
               child: ListView.builder(
                   itemCount: 1,
                   shrinkWrap: true,

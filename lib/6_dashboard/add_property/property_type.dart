@@ -18,55 +18,56 @@ class _property_typeState extends State<property_type> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.grey,
-      ),
-
-      body: Container(
-        padding: EdgeInsets.only(top: 37),
-        width: MediaQuery.of(context).size.width,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-
-            Text(":اختر نوع العقار الذي تود نشره",style: TextStyle(fontSize: 23),),
-            GestureDetector(
-              onTap: (){
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder:(context) => form_residential( ))); },
-
-              child:
-              other_templates.property_choices(height()/6.3, width()/1.3, "سكني", "بيت/شقة/مشتمل/فيلا", 37, 23),
-            ),
-
-            GestureDetector(
-              onTap: (){
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder:(context) => form_land( ))); },
-
-              child:
-              other_templates.property_choices(height()/6.3, width()/1.3, "ارض", "سكني/زراعي", 37, 23),
-            ),
-            GestureDetector(
-              onTap: (){
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder:(context) => form_store( ))); },
-
-              child:
-              other_templates.property_choices(height()/6.3, width()/1.3, "متجر", "", 37, 23),
-            ),
-            GestureDetector(
-              onTap: (){
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder:(context) => form_building( ))); },
-
-              child:
-              other_templates.property_choices(height()/6.3, width()/1.3, "مبنى", "سكنية/تجارية: عمارات الخ", 37, 23),
-            ),
-
-          ],
+        appBar: AppBar(
+          title: Icon(
+            Icons.arrow_back_ios_new,
+          ),
         ),
-      )
+        body: Container(
+          padding: EdgeInsets.only(top: 37),
+          width: MediaQuery.of(context).size.width,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+
+              Text(":اختر نوع العقار الذي تود نشره",style: TextStyle(fontSize: 23),),
+              GestureDetector(
+                onTap: (){
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder:(context) => form_residential( ))); },
+
+                child:
+                other_templates.property_choices(height()/6.3, width()/1.3, "سكني", "بيت/شقة/مشتمل/فيلا", 37, 23),
+              ),
+
+              GestureDetector(
+                onTap: (){
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder:(context) => form_land( ))); },
+
+                child:
+                other_templates.property_choices(height()/6.3, width()/1.3, "ارض", "سكني/زراعي", 37, 23),
+              ),
+              GestureDetector(
+                onTap: (){
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder:(context) => form_store( ))); },
+
+                child:
+                other_templates.property_choices(height()/6.3, width()/1.3, "متجر", "", 37, 23),
+              ),
+              GestureDetector(
+                onTap: (){
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder:(context) => form_building( ))); },
+
+                child:
+                other_templates.property_choices(height()/6.3, width()/1.3, "مبنى", "سكنية/تجارية: عمارات الخ", 37, 23),
+              ),
+
+            ],
+          ),
+        )
 
     );
   }

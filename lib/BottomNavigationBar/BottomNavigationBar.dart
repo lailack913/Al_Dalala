@@ -1,3 +1,4 @@
+import 'package:al_dalala/6_dashboard/payment/payment_type.dart';
 import 'package:flutter/material.dart';
 import 'package:al_dalala/1_home/home_page.dart';
 
@@ -20,7 +21,7 @@ class _bottomNState extends State<bottomN> {
   static List<Widget> _widgetOptions = <Widget>[
 
     Center(child: Text("account"),),
-    Center(child: Text("add"),),
+    payment_type(),
     Center(child: Text("save"),),
     home_page(),
 
