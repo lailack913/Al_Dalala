@@ -28,9 +28,9 @@ class _fliterState extends State<fliter> {
   @override
   Widget build(BuildContext context) {
     final bc = LinearGradient(
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-    colors:  [Color(0x23494A), Colors.white,],
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      colors:  [Color(0x23494A), Colors.white,],
     );
     return Scaffold(
 
