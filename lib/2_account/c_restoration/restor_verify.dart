@@ -15,9 +15,9 @@ class _restor_verifyState extends State<restor_verify> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
-          child: Text('Example verify code'),
-        )
+          title: const Center(
+            child: Text('Example verify code'),
+          )
 
       ),
       body: Column(
@@ -41,7 +41,7 @@ class _restor_verifyState extends State<restor_verify> {
                 .amber, // If this is null it will use primaryColor: Colors.red from Theme
             length: 4,
             cursorColor:
-                Colors.blue, // If this is null it will default to the ambient
+            Colors.blue, // If this is null it will default to the ambient
             // clearAll is NOT required, you can delete it
             // takes any widget, so you can implement your design
             clearAll: Padding(
