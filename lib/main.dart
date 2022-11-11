@@ -17,5 +17,5 @@ import '6_dashboard/add_property/form_building.dart';
 void main() {
 
 
-  runApp( MaterialApp(home: payment_type(),));
+  runApp( MaterialApp(home: fliter()));
 }
