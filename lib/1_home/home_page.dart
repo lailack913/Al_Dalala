@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:al_dalala/1_home/Carousel.dart';
 import 'package:http/http.dart';
 
-import '../6_dashboard/add_property/view_residential.dart';
 import '../templates/post_templates.dart';
 
 class home_page extends StatefulWidget {
   const home_page({Key? key}) : super(key: key);
+
 
 
   @override
@@ -166,13 +166,10 @@ class _home_pageState extends State<home_page> {
                     return
                       Column(
                         children: [
-                         post_residential("https://media.architecturaldigest.com/photos/57c7003fdc03716f7c8289dd/master/pass/IMG%20Worlds%20of%20Adventure%20-%201.jpg",
+                          post_templates.post_residential("https://media.architecturaldigest.com/photos/57c7003fdc03716f7c8289dd/master/pass/IMG%20Worlds%20of%20Adventure%20-%201.jpg",
                               "مشتمل", "بيع", "بغداد", "الدورة", 150, 12, "مليون د.ع",
                               1, 2, 3, 4,
-                              MediaQuery.of(context).size.height/2.9, MediaQuery.of(context).size.height/5.3,
-                              true, false, "مكتب النور", "07700000"," بلا  بلا  بلا  بلا  بلا  بلا  بلا  بلا  بلا  بلا  بلا  بلا  بلا  بلا ",
-                           true
-                         ),
+                              MediaQuery.of(context).size.height/2.9, MediaQuery.of(context).size.height/5.3),
 
                           SizedBox(height: MediaQuery.of(context).size.height/17,),
 
@@ -204,185 +201,151 @@ class _home_pageState extends State<home_page> {
       ),
     );
   }
-  height(){
-    var height;
-    return height=MediaQuery.of(context).size.height;
-  }
-  width(){
-    var width;
-    return width=MediaQuery.of(context).size.width;
-  }
 
-   post_residential(String main_img,String residential_type,
-      String sell_rent, String city,String district,
-      int area, double price, String price_type,
-      int room,int hall, int kitchen,int bathroom,
-      double post_height, double photo_hight, bool garden, bool carage,
-       String owner, String owner_phone, String property_describtion,
-       bool property_state
-      )
-  {
-    return GestureDetector(
-
+  Widget  cccc (){
+    return Padding(padding: EdgeInsets.all(35),
       child: Container(
-        height: post_height,
+        height: 430,
         decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey, width: 2),
-            borderRadius: BorderRadius.all(Radius.circular(19))
-        ),
+          color: Colors.grey.shade100,
+          borderRadius: BorderRadius.circular(15),),
         child: Column(
           children: [
-            Stack(
-              children: [
-                Container(
-                    height: photo_hight,
-                    decoration: BoxDecoration(
-                        color: Colors.grey,
-                        image: DecorationImage(
-                          image: NetworkImage("$main_img",),
-                          fit: BoxFit.cover,
-                        ),
-                        borderRadius: BorderRadius.vertical(top: Radius.circular(17))
-                    )
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 200,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                image: DecorationImage(image: NetworkImage("https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&w=600",
                 ),
-                Positioned(
-                  top: 6,
-                  right: 10,
-                  child: Container(
-                      padding: EdgeInsets.only(left: 0),
-                      width: 39, height: 50,
-                      decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.5),
-                          borderRadius: BorderRadius.circular(13),
-                          boxShadow: [
-                          ]
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+            SizedBox(height: 20,),
+            Padding(
+              padding: const EdgeInsets.only(right: 25,left: 25,),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15,),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("السعر:1,200,000",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18
+                          ),
+                        ),
+                        Text("بيت",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20
+                          ),),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 15,),
+                  Text("مساحة : 150 م.م",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20
+                    ),
+                  ),
+                  SizedBox(height: 15,),
+                  Text("واجية : 10",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20
+                    ),
+                  ),
+                  SizedBox(height: 15,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+
+                        width: 80,
+                        height: 80,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 0.3,
+                          ),
+                          borderRadius: BorderRadius.circular(40),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text("اضغط المزيد",style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15
+                            ),),
+                          ],
+                        ),
                       ),
-                      child:
-                      Icon( Icons.bookmark_border, color: Colors.grey, size: 30,)
+                      Container(
+                        alignment: Alignment(0.8, 0.1),
+                        width: 60,
+                        height: 30,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 0.3,
+                          ),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: Text("صالة : 2",style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15
+                        ),),
+                      ),
+                      Container(
+                        alignment: Alignment(0.8, 0.1),
+                        width: 65,
+                        height: 30,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 0.3,
+                          ),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: Text("مطبخ : 1",style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15
+                        ),),
+                      ),
+                      Container(
+                        alignment: Alignment(0.8, 0.1),
+                        width: 80,
+                        height: 30,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 0.3,
+                          ),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: Text("غرف نوم : 4",style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15
+                        ),),
+                      ),
+                    ],
                   ),
-                )
-              ],
-            ),
-            Padding(padding: EdgeInsets.fromLTRB(17, 13, 17, 0),
-              child:
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("المساحة:$area م", style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),),
-                  Text("$residential_type-$sell_rent", style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),)
+
                 ],
               ),
+
             ),
-            Padding(padding: EdgeInsets.fromLTRB(17, 1, 17, 0),
-              child:
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("السعر: $price $price_type", style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),),
-                  Text("$city-$district", style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),),
-                ],
-              ),
-            ),
-            Padding(padding: EdgeInsets.fromLTRB(17, 1.5, 17, 0),
-              child:
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Icon(Icons.arrow_back_ios_new),
-                  Text("المزيد ", style: TextStyle(fontSize: 21.3, fontWeight: FontWeight.w500),),
-                  Container(
-                    height: 37, width: 65,
-                    decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey, width: 2),
-                        borderRadius: BorderRadius.all(Radius.circular(11))
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text("حمام"),
-                        Text("$bathroom"),
-                        Icon(Icons.cabin, size: 17,)
-                      ],
-                    ),
-                  ),
-                  Container(
-                    height: 37, width: 65,
-                    decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey, width: 2),
-                        borderRadius: BorderRadius.all(Radius.circular(11))
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text("مطبخ"),
-                        Text("$kitchen"),
-                        Icon(Icons.cabin, size: 17,)
-                      ],
-                    ),
-                  ),
-                  Container(
-                    height: 37, width: 65,
-                    decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey, width: 2),
-                        borderRadius: BorderRadius.all(Radius.circular(11))
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text("صالة"),
-                        Text("$hall"),
-                        Icon(Icons.cabin, size: 17,)
-                      ],
-                    ),
-                  ),
-                  Container(
-                    height: 37, width: 65,
-                    decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey, width: 2),
-                        borderRadius: BorderRadius.all(Radius.circular(11))
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text("غرف"),
-                        Text("$room"),
-                        Icon(Icons.cabin, size: 17,)
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            )
+
           ],
         ),
       ),
-      onTap: (){
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder:(context) => view_residetial(
-          residential_type2 : residential_type,
-          sell_rent2 : sell_rent,
-          city2 : city,
-          district2 : district,
-          area2 : area,
-          price2: price,
-          price_type2: price_type,
-          room2: room,
-          hall2: hall,
-          kitchen2: kitchen,
-          bathroom2: bathroom,
-          garden2: garden,
-          carage2: carage,
-          owner2: owner,
-          owner_phone2: owner_phone,
-          property_describtion2: property_describtion,
-          property_state2: property_state ,
-        )
-        )
-        );
-      },
     );
-
-
   }
-
 }
