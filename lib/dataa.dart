@@ -22,3 +22,4 @@ var roomnumberup="";
 var kichenup="";
 var interaceup="";
 var spaceup="";
+

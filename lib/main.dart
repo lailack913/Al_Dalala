@@ -7,6 +7,8 @@ import 'package:al_dalala/2_account/b_login/login.dart';
 import 'package:al_dalala/2_account/c_restoration/restor_PN.dart';
 import 'package:al_dalala/2_account/c_restoration/restor_new_password.dart';
 import 'package:al_dalala/5_saved/saved.dart';
+import 'package:al_dalala/6_dashboard/add_property/Details.dart';
+import 'package:al_dalala/6_dashboard/add_property/view_residential.dart';
 import 'package:al_dalala/6_dashboard/payment/payment_type.dart';
 import 'package:al_dalala/BottomNavigationBar/BottomNavigationBar.dart';
 import 'package:flutter/material.dart';
@@ -17,5 +19,6 @@ import '6_dashboard/add_property/form_building.dart';
 void main() {
 
 
-  runApp( MaterialApp(home: payment_type(),));
+  runApp( MaterialApp(home: home_page(),));
+
 }

@@ -101,5 +101,12 @@ class button {
           )
       );
   }
-
+ // srtatic  linkbotton(){
+   // return ElevatedButton(
+ //     onPressed: () => setState(() {
+  //      _launched = _launchInBrowser(toLaunch);
+  //    }),
+   //   child: const Text('Launch in browser'),
+//    ),
+  //}
 }
