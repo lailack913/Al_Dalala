@@ -1,5 +1,6 @@
 import 'package:al_dalala/6_dashboard/payment/how_cash.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 
 import '../../templates/other_templates.dart';
 
@@ -11,6 +12,24 @@ class set_subscribe extends StatefulWidget {
 }
 
 class _set_subscribeState extends State<set_subscribe> {
+  Future sendstest(stest) async{
+    var url = Uri.parse("http://localhost:4000");
+    Map<String, String> headers = {
+      "Contect-type":"application/json",
+      "Access-Control-Allow-Origin":"*"
+    };
+
+    String json =
+    '{"stest": STEST (month_of_subscribe)}';
+    Response response = await post(
+    url,
+    headers: headers,
+    body: json,
+    );
+    String body1 = response.body;
+  }
+
+
   other_templates _other_templates = other_templates();
   int month_of_subscribe = 1;
   int monthe_price = 700000;
@@ -62,7 +81,8 @@ class _set_subscribeState extends State<set_subscribe> {
                                     children: [
                                       GestureDetector(
                                         child:  Icon( Icons.add  ),
-                                        onTap: (){{ setState(() { year_of_subscribe++; }); };},
+                                        onTap: (){{ setState(() { year_of_subscribe++;
+                                        print(year_of_subscribe);}); };},
                                       ),
                                       SizedBox(width: 7,),
                                       Container(height: 19, width:3, color: Colors.grey,),
@@ -124,15 +144,6 @@ class _set_subscribeState extends State<set_subscribe> {
                                 27, 17)
                         ),
 
-                        SizedBox(height: 15,),
-
-                        GestureDetector(
-                          onTap: (){ },
-                          child:
-                          other_templates.choice_title_script(height()/5.3, width()/1.2,
-                              "زين كاش", "زين كاش زين كاش زين كاش زين كاش زين كاش زين كاش زين كاش زين كاش زين كاش ",
-                              27, 17),
-                        ),
 
                       ],
                     )
@@ -215,15 +226,6 @@ class _set_subscribeState extends State<set_subscribe> {
                               27, 17)
                       ),
 
-                      SizedBox(height: 9,),
-
-                      GestureDetector(
-                        onTap: (){ },
-                        child:
-                        other_templates.choice_title_script(height()/5.5, width()/1.2,
-                            "زين كاش", "زين كاش زين كاش زين كاش زين كاش زين كاش زين كاش زين كاش زين كاش زين كاش ",
-                            27, 17),
-                      ),
 
                     ],
                   )

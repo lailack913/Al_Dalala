@@ -98,15 +98,7 @@ class _pay_for_postState extends State<pay_for_post> {
                     27, 17)
             ),
 
-            SizedBox(height: 15,),
 
-            GestureDetector(
-              onTap: (){ },
-              child:
-              other_templates.choice_title_script(height()/5.3, width()/1.2,
-                  "زين كاش", "زين كاش زين كاش زين كاش زين كاش زين كاش زين كاش زين كاش زين كاش زين كاش ",
-                  27, 17),
-            ),
 
           ],
         )

@@ -24,7 +24,7 @@ class _free_trailState extends State<free_trail> {
         child:  Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text("مبارك, الن لديك 3 اشهر مجانا لمنشور واحد",style: TextStyle(fontSize: 37),),
+            Text("مبارك, الان لديك 3 اشهر مجانا لمنشور واحد",style: TextStyle(fontSize: 37),),
             Text("مبارك, الن لديك 3 اشهر مجانا لمنشور واحد مبارك, الن لديك 3 اشهر مجانا لمنشور واحد مبارك, الن لديك 3 اشهر مجانا لمنشور واحد مبارك, الن لديك 3 اشهر مجانا لمنشور واحد",
               style: TextStyle(fontSize: 27), textAlign: TextAlign.right,),
             Container(
@@ -33,6 +33,7 @@ class _free_trailState extends State<free_trail> {
               child:
               ElevatedButton(
                   onPressed: (){
+
                     Navigator.of(context)
                         .push(MaterialPageRoute(builder:(context) => property_type( )));},
                   child: Text("موافق")),
