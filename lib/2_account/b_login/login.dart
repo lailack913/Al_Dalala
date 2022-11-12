@@ -1,9 +1,11 @@
+import 'package:al_dalala/2_account/c_restoration/restor_PN.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
 import '../../dataa.dart';
 import '../../1_home/home_page.dart';
 import '../a_sign in/creat_account.dart';
+import '../c_restoration/restor_new_password.dart';
 
 
 var phoneController = TextEditingController();
@@ -96,12 +98,25 @@ class _loginState extends State<login> {
               ),
               Row(
                 children: [
-                  Text(
-                    "هل نسيت كلمة السر؟",
-                    style: TextStyle(
-                        decoration: TextDecoration.underline,
-                        color: Colors.blue),
+                  GestureDetector(
+                    child: Text(
+                      "هل نسيت كلمة السر؟",
+                      style: TextStyle(
+                          decoration: TextDecoration.underline,
+                          color: Colors.blue),
+
+                    ),
+
+                    onTap: (){
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) => restor_pn(
+                        title: "اترجاع الحساب",
+                        message: "يرجى ادخال رقم الهاتف لاسترجاع الحساب",
+                        note:  "سيتم ارسال رمز تاكيد الى رقم الهاتف المدخل لاسترجاع الحساب لذا يرجى التأكد من كتابته بشكل صحيح",
+                      )));
+                    },
                   ),
+
                   Transform.translate(
                     offset: const Offset(37, 0),
                     child: Container(

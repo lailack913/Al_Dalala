@@ -15,10 +15,10 @@ class _restor_verifyState extends State<restor_verify> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Center(
-            child: Text('Example verify code'),
-          )
-
+        title: Icon(
+          Icons.arrow_back_ios_new,
+        ),
+        backgroundColor: Colors.grey,
       ),
       body: Column(
         children: [
@@ -26,7 +26,7 @@ class _restor_verifyState extends State<restor_verify> {
             padding: EdgeInsets.all(8.0),
             child: Center(
               child: Text(
-                'Enter your code',
+                'ادخل الرمز',
                 style: TextStyle(fontSize: 20.0),
               ),
             ),
@@ -47,7 +47,7 @@ class _restor_verifyState extends State<restor_verify> {
             clearAll: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                'clear all',
+                'حذف الكل',
                 style: TextStyle(
                     fontSize: 14.0,
                     decoration: TextDecoration.underline,
@@ -71,8 +71,8 @@ class _restor_verifyState extends State<restor_verify> {
             padding: const EdgeInsets.all(8.0),
             child: Center(
               child: _onEditing
-                  ? const Text('Please enter full code')
-                  : Text('Your code: $_code'),
+                  ? const Text('يرجى ادخال الرمز كاملا')
+                  : Text('$_codeالرمز الخاص بك:'),
             ),
           )
         ],

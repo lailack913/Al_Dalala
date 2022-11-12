@@ -6,6 +6,7 @@ import 'package:al_dalala/2_account/a_sign%20in/creat_account.dart';
 import 'package:al_dalala/2_account/b_login/login.dart';
 import 'package:al_dalala/2_account/c_restoration/restor_PN.dart';
 import 'package:al_dalala/2_account/c_restoration/restor_new_password.dart';
+import 'package:al_dalala/2_account/e_account%20details/information%20section/account_info.dart';
 import 'package:al_dalala/5_saved/saved.dart';
 import 'package:al_dalala/6_dashboard/add_property/Details.dart';
 import 'package:al_dalala/6_dashboard/add_property/view_residential.dart';
@@ -20,6 +21,6 @@ import '6_dashboard/add_property/form_building.dart';
 void main() {
 
 
-  runApp( MaterialApp(home: set_subscribe(),));
+  runApp( MaterialApp(home: account_info(),));
 
 }

@@ -5,17 +5,27 @@ import '../../dataa.dart';
 import '../../1_home/home_page.dart';
 import '../a_sign in/creat_account.dart';
 import 'package:al_dalala/2_account/c_restoration/restor_verify.dart';
-import 'package:al_dalala/2_account/d_reset%20password/reset_verify.dart';
 
 var phoneController = TextEditingController();
 
 class restor_pn extends StatefulWidget {
+  late final String title;
+  late final String message;
+  late final String note;
+  restor_pn({
+    required this.title,
+    required this.message,
+    required this.note,
+  });
+
   @override
   State<restor_pn> createState() => _restor_pnState();
 }
 
 class _restor_pnState extends State<restor_pn> {
   var litems = [];
+
+
 
   Future getData() async {
     var url = Uri.parse("http://localhost:4000");
@@ -55,13 +65,13 @@ class _restor_pnState extends State<restor_pn> {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
-                "إٍسترجاع الحساب",
+                widget.title,
                 style: TextStyle(
                   fontSize: 31,
                 ),
               ),
               Text(
-                "يرجى ادخال رقم الهاتف لاسترجاع الحساب",
+                widget.message,
                 style: TextStyle(
                   fontSize: 17,
                 ),
@@ -82,7 +92,7 @@ class _restor_pnState extends State<restor_pn> {
                 height: 17,
               ),
               Text(
-                "سيتم ارسال رمز تاكيد الى رقم الهاتف المدخل لاسترجاع الحساب لذا يرجى التأكد من كتابته بشكل صحيح",
+               widget.note,
                 style: TextStyle(
                   fontSize: 19,
                 ),
