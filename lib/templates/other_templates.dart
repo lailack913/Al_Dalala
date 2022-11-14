@@ -2,6 +2,14 @@ import 'package:flutter/material.dart';
 
 class other_templates{
 
+  static height(var context){
+    var height=MediaQuery.of(context).size.height;
+    return height;
+  }
+  static width(var context){
+    var width=MediaQuery.of(context).size.width;
+    return width;
+  }
   static choice_title_script( double height, double width,
       String title, String script,
       double title_size, double script_size ){
