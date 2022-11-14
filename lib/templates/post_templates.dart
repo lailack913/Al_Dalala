@@ -4,13 +4,12 @@ import 'package:flutter/material.dart';
  class post_templates   {
 // make a function to build the posts of residential
 
-
    static post_residential(var context,String main_img,String residential_type,
        String sell_rent, String city,String district,
        int area, double price, String price_type,
        int room,int hall, int kitchen,int bathroom,
        bool garden, bool carage, String owner, String owner_phone,
-       String property_describtion, bool property_state,
+       String property_describtion, b property_state,
        double post_height, double photo_hight
        )
    {
