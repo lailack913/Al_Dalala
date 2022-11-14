@@ -1,6 +1,8 @@
+import 'package:al_dalala/templates/other_templates.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
+
 //read it
 // import 'dart:js'; ir didnt run until i stop this line so check it pls <<<<<<<<<<
 import '../../dataa.dart';
@@ -18,6 +20,9 @@ class creat_account extends StatefulWidget {
 }
 
 class _creat_accountState extends State<creat_account> {
+
+  late String _account_typeup;
+
   bool check = false;
   Future Add_data() async {
     var url = Uri.parse("http://localhost:4000/r");
@@ -65,6 +70,52 @@ class _creat_accountState extends State<creat_account> {
                   "اهلا بك",
                   style: TextStyle(
                     fontSize: 31,
+                  ),
+                ),
+                Text(":اختر نوع الحساب",style: TextStyle(
+                  fontSize: 25,
+                ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 13),
+                  child: Row(
+                    children: [
+
+                      GestureDetector(
+                        child: type("شخص"),
+                        onTap: (){
+                          _account_typeup="person";
+                        },
+                      ),
+
+                      SizedBox(width: 5,),
+
+                      GestureDetector(
+                        child: type("تاجر"),
+                        onTap: (){
+                          _account_typeup="merchant";
+                        },
+                      ),
+
+                      SizedBox(width: 5,),
+
+                      GestureDetector(
+                        child: type("مكتب"),
+                        onTap: (){
+                          _account_typeup="office";
+                        },
+                      ),
+
+                      SizedBox(width: 5,),
+
+                      GestureDetector(
+                        child: type("شركة"),
+                        onTap: (){
+                          _account_typeup="company";
+                        },
+                      )
+
+                    ],
                   ),
                 ),
                 TextField(
@@ -144,26 +195,33 @@ class _creat_accountState extends State<creat_account> {
                               nameup = nameController.text;
                               phoneup = phoneController.text;
                               passwordup = passwordController.text;
-                              // password_confirmup=password_confirmController.text;
+                              password_confirmup = password_confirmController.text;
                               Add_data();
                             });
+                            //getData();
                           },
                           child: Text("أنشئ حسابي"),
                         ),
                         SizedBox(
                           height: 7,
                         ),
-                        Text(
-                          "لديك حساب بالفعل؟",
-                          style: TextStyle(fontSize: 19),
-                        ),
-                        Text(
-                          "تسجيل الدخول",
-                          style: TextStyle(
-                              fontSize: 19,
-                              decoration: TextDecoration.underline,
-                              color: Colors.blue),
-                        ),
+                        Row(
+                          children: [
+                            Text(
+                              "تسجيل الدخول",
+                              style: TextStyle(
+                                  fontSize: 19,
+                                  decoration: TextDecoration.underline,
+                                  color: Colors.blue),
+                            ),
+                            SizedBox(width: 7,),
+                            Text(
+                              "لديك حساب بالفعل؟",
+                              style: TextStyle(fontSize: 19),
+                            ),
+
+                          ],
+                        )
                       ],
                     )
                   ],
@@ -171,43 +229,24 @@ class _creat_accountState extends State<creat_account> {
                 SizedBox(
                   height: 40,
                 ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  height: 50, // <-- match-parent
-                  child: ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        nameup = nameController.text;
-                        phoneup = phoneController.text;
-                        passwordup = passwordController.text;
-                        password_confirmup = password_confirmController.text;
-                        Add_data();
-                      });
-                      //getData();
-                    },
-                    child: Text(
-                      "التالي ",
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Color(0xff04a794),
-                      ),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                        elevation: 5,
-                        primary: Color(0xffffffff),
-                        // padding: EdgeInsets.symmetric(horizontal:200, vertical: 20),
-                        side: BorderSide(
-                          width: 0,
-                        ),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(
-                              20,
-                            ))),
-                  ),
-                )
               ],
             ),
           ),
         ));
+  }
+  type(String type){
+    return Container(
+        height: other_templates.height(context)/15,
+        width: other_templates.width(context)/6.5,
+        decoration: BoxDecoration(
+          border: Border.all(),
+          borderRadius: BorderRadius.circular(19),
+        ),
+        child: Center(
+          child:  Text("$type",style: TextStyle(
+            fontSize: 19,
+          ),),
+        )
+    );
   }
 }
