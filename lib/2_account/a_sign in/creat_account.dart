@@ -30,7 +30,8 @@ class _creat_accountState extends State<creat_account> {
 
     String json = '{"fullname": "$nameup",'
         ' "u_phone": "$phoneup",'
-        ' "password": "$passwordup"}';
+        ' "password": "$passwordup",'
+        ' "usertype": "$usertypeup"}';
     // make POST request
     Response response = await post(url, headers: headers, body: json);
     // check the status code for the result
@@ -84,7 +85,10 @@ class _creat_accountState extends State<creat_account> {
                       GestureDetector(
                         child: type("شخص"),
                         onTap: (){
-                          _account_typeup="person";
+                          setState(() {
+                            usertypeup="person";
+
+                          });
                         },
                       ),
 
@@ -93,7 +97,10 @@ class _creat_accountState extends State<creat_account> {
                       GestureDetector(
                         child: type("تاجر"),
                         onTap: (){
-                          _account_typeup="merchant";
+                          setState(() {
+                            usertypeup="merchant";
+
+                          });
                         },
                       ),
 
@@ -102,7 +109,10 @@ class _creat_accountState extends State<creat_account> {
                       GestureDetector(
                         child: type("مكتب"),
                         onTap: (){
-                          _account_typeup="office";
+                          setState(() {
+                            usertypeup="office";
+
+                          });
                         },
                       ),
 
@@ -111,7 +121,9 @@ class _creat_accountState extends State<creat_account> {
                       GestureDetector(
                         child: type("شركة"),
                         onTap: (){
-                          _account_typeup="company";
+                          setState(() {
+                            usertypeup="company";
+                          });
                         },
                       )
 
@@ -196,6 +208,7 @@ class _creat_accountState extends State<creat_account> {
                               phoneup = phoneController.text;
                               passwordup = passwordController.text;
                               password_confirmup = password_confirmController.text;
+                              account_typeup=usertypeup;
                               Add_data();
                             });
                             //getData();
