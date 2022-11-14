@@ -1,7 +1,6 @@
 import 'package:al_dalala/0_welcoming/a_splash%20screen/splash.dart';
 import 'package:al_dalala/0_welcoming/b_first%20time%20open/first_time.dart';
 import 'package:al_dalala/1_home/home_page.dart';
-import 'package:al_dalala/2_account/a_sign%20in/account_type.dart';
 import 'package:al_dalala/2_account/a_sign%20in/creat_account.dart';
 import 'package:al_dalala/2_account/b_login/login.dart';
 import 'package:al_dalala/2_account/c_restoration/restor_PN.dart';
@@ -21,6 +20,6 @@ import '6_dashboard/add_property/form_building.dart';
 void main() {
 
 
-  runApp( MaterialApp(home: account_info(),));
+  runApp( MaterialApp(home: splash(),debugShowCheckedModeBanner: false,));
 
 }

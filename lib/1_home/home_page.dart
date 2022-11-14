@@ -1,10 +1,13 @@
 import 'dart:convert';
 
+import 'package:al_dalala/templates/other_templates.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:al_dalala/1_home/Carousel.dart';
+import 'package:flutter/rendering.dart';
 import 'package:http/http.dart';
 
+import '../2_account/e_account details/information section/account_info.dart';
 import '../templates/post_templates.dart';
 
 class home_page extends StatefulWidget {
@@ -71,281 +74,158 @@ class _home_pageState extends State<home_page> {
     ];
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Container(
-                padding: EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey.shade50,
-                          offset: Offset(0,6),
-                          blurRadius: 6,
-                          spreadRadius: 3
-                      )
-                    ]
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    CircleAvatar(
-                      radius: 25,
-                      backgroundColor: Colors.teal,
-                    ),
-                    IconButton(onPressed: (){}, icon: Icon(CupertinoIcons.bell,size: 30,))
-                  ],
-                )
-            ),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.all(20),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 50,
-                    height: 50,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all()
-                    ),
-                    child:  Icon(Icons.search),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey.shade50,
+                            offset: Offset(0,6),
+                            blurRadius: 6,
+                            spreadRadius: 3
+                        )
+                      ]
                   ),
-                  SizedBox(width: 20,),
-                  Expanded(
-                      child: SizedBox(
-                          height: 50,
-                          child:  Directionality(textDirection: TextDirection.rtl, child: TextFormField(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
 
-                            decoration: InputDecoration(
-                                contentPadding: EdgeInsets.all(20),
-                                filled: false,
-                                border: InputBorder.none,
-                                hintText: "بحث عن ",
-                                enabledBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10)
-                                )
-                            ),
-                          ),)
-                      )),
-                ],
+                      IconButton(
+                        icon: Icon(Icons.account_circle_outlined,size: 43, ),
+                        onPressed: (){
+                          Navigator.of(context).
+                          push(MaterialPageRoute(builder: (context) => account_info()));
+                        },
+                      ),
+
+                      IconButton(
+                          icon: Icon(CupertinoIcons.question_circle,size: 39,),
+                          onPressed: (){
+
+                          },
+                      )
+                    ],
+                  )
               ),
-            ),
 
+              Container(
+                width: MediaQuery.of(context).size.width,
+                padding: EdgeInsets.all(20),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 50,
+                      height: 50,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all()
+                      ),
+                      child:  Icon(Icons.search),
+                    ),
+                    SizedBox(width: 20,),
+                    Expanded(
+                        child: SizedBox(
+                            height: 50,
+                            child:  Directionality(textDirection: TextDirection.rtl, child: TextFormField(
 
-            CarouselWithDotsPage(imgList: imgList),
-            SizedBox(height: 10,),
-            Padding(
-              padding: EdgeInsets.only(top: 10,right: 22),
-              child: Text(
-                "المعروض",
-                style: TextStyle(
-                  color: Colors.teal,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
+                              decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.all(20),
+                                  filled: false,
+                                  border: InputBorder.none,
+                                  hintText: "بحث عن ",
+                                  enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10)
+                                  )
+                              ),
+                            ),)
+                        )),
+                  ],
                 ),
               ),
-            ),
 
+              CarouselWithDotsPage(imgList: imgList),
 
+              SizedBox(height: 10,),
 
-            Container(
-              width: MediaQuery.of(context).size.width/1.05,
-              child: ListView.builder(
-                  itemCount: 5,
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  itemBuilder: ( context, pos){
-                    return
-                      Column(
-                        children: [
-                          post_templates.post_residential("https://media.architecturaldigest.com/photos/57c7003fdc03716f7c8289dd/master/pass/IMG%20Worlds%20of%20Adventure%20-%201.jpg",
-                              "مشتمل", "بيع", "بغداد", "الدورة", 150, 12, "مليون د.ع",
-                              1, 2, 3, 4,
-                              MediaQuery.of(context).size.height/2.9, MediaQuery.of(context).size.height/5.3),
-
-                          SizedBox(height: MediaQuery.of(context).size.height/17,),
-
-                          post_templates.post_land("https://media.architecturaldigest.com/photos/57c7003fdc03716f7c8289dd/master/pass/IMG%20Worlds%20of%20Adventure%20-%201.jpg",
-                              "سكية", "بغداد", "العامرية", 300, 120, "مليون د.ع",
-                              MediaQuery.of(context).size.height/2.9, MediaQuery.of(context).size.height/5.3),
-
-                          SizedBox(height: MediaQuery.of(context).size.height/17,),
-
-                          post_templates.post_store("https://media.architecturaldigest.com/photos/57c7003fdc03716f7c8289dd/master/pass/IMG%20Worlds%20of%20Adventure%20-%201.jpg",
-                              "متجر احذية", "بيع", "البصرة", "شارع اجزائر", 100, 30, "مليون د.ع",
-                              MediaQuery.of(context).size.height/2.9, MediaQuery.of(context).size.height/5.3),
-
-                          SizedBox(height: MediaQuery.of(context).size.height/17,),
-
-                          post_templates.post_buildings("https://media.architecturaldigest.com/photos/57c7003fdc03716f7c8289dd/master/pass/IMG%20Worlds%20of%20Adventure%20-%201.jpg",
-                              "تجاري", "للبيع", "البصرة", "الجزائر", 370, 2.7,"مليار د.ع", 3,
-                              MediaQuery.of(context).size.height/2.9, MediaQuery.of(context).size.height/5.3),
-
-                          SizedBox(height: MediaQuery.of(context).size.height/17,),
-
-
-                        ],
-                      );
-                  }),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget  cccc (){
-    return Padding(padding: EdgeInsets.all(35),
-      child: Container(
-        height: 430,
-        decoration: BoxDecoration(
-          color: Colors.grey.shade100,
-          borderRadius: BorderRadius.circular(15),),
-        child: Column(
-          children: [
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: 200,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                image: DecorationImage(image: NetworkImage("https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&w=600",
-                ),
-                  fit: BoxFit.fill,
-                ),
-              ),
-            ),
-            SizedBox(height: 20,),
-            Padding(
-              padding: const EdgeInsets.only(right: 25,left: 25,),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 15,),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("السعر:1,200,000",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18
-                          ),
-                        ),
-                        Text("بيت",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20
-                          ),),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 15,),
-                  Text("مساحة : 150 م.م",
-                    style: TextStyle(
+                    padding: EdgeInsets.fromLTRB(0, 11, 23, 11),
+                    child: Text(
+                      "المعروض",
+                      style: TextStyle(
+                        color: Colors.teal,
                         fontWeight: FontWeight.bold,
-                        fontSize: 20
+                        fontSize: 27,
+                      ),
                     ),
                   ),
-                  SizedBox(height: 15,),
-                  Text("واجية : 10",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20
-                    ),
-                  ),
-                  SizedBox(height: 15,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-
-                        width: 80,
-                        height: 80,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black,
-                            width: 0.3,
-                          ),
-                          borderRadius: BorderRadius.circular(40),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("اضغط المزيد",style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15
-                            ),),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment(0.8, 0.1),
-                        width: 60,
-                        height: 30,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black,
-                            width: 0.3,
-                          ),
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        child: Text("صالة : 2",style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15
-                        ),),
-                      ),
-                      Container(
-                        alignment: Alignment(0.8, 0.1),
-                        width: 65,
-                        height: 30,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black,
-                            width: 0.3,
-                          ),
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        child: Text("مطبخ : 1",style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15
-                        ),),
-                      ),
-                      Container(
-                        alignment: Alignment(0.8, 0.1),
-                        width: 80,
-                        height: 30,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black,
-                            width: 0.3,
-                          ),
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        child: Text("غرف نوم : 4",style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15
-                        ),),
-                      ),
-                    ],
-                  ),
-
                 ],
               ),
 
-            ),
+              Container(
+                width: other_templates.width(context)/1.07,
+                child: ListView.builder(
+                    itemCount: 5,
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemBuilder: ( context, pos){
+                      return
+                        Column(
+                          children: [
+                            post_templates.post_residential(context,
+                                "https://media.architecturaldigest.com/photos/57c7003fdc03716f7c8289dd/master/pass/IMG%20Worlds%20of%20Adventure%20-%201.jpg",
+                                "مشتمل", "بيع", "بغداد", "الدورة", 150, 12, "مليون د.ع",1, 2, 3, 4, true, false, "مكتب النور للعقار", "07700000", "property_describtion",true,
+                              MediaQuery.of(context).size.height/2.9, MediaQuery.of(context).size.height/5.3,),
 
-          ],
+                            SizedBox(height: MediaQuery.of(context).size.height/17,),
+
+                            post_templates.post_land("https://media.architecturaldigest.com/photos/57c7003fdc03716f7c8289dd/master/pass/IMG%20Worlds%20of%20Adventure%20-%201.jpg",
+                                "سكية", "بغداد", "العامرية", 300, 120, "مليون د.ع",
+                                MediaQuery.of(context).size.height/2.9, MediaQuery.of(context).size.height/5.3),
+
+                            SizedBox(height: MediaQuery.of(context).size.height/17,),
+
+                            post_templates.post_store("https://media.architecturaldigest.com/photos/57c7003fdc03716f7c8289dd/master/pass/IMG%20Worlds%20of%20Adventure%20-%201.jpg",
+                                "متجر احذية", "بيع", "البصرة", "شارع اجزائر", 100, 30, "مليون د.ع",
+                                MediaQuery.of(context).size.height/2.9, MediaQuery.of(context).size.height/5.3),
+
+                            SizedBox(height: MediaQuery.of(context).size.height/17,),
+
+                            post_templates.post_buildings("https://media.architecturaldigest.com/photos/57c7003fdc03716f7c8289dd/master/pass/IMG%20Worlds%20of%20Adventure%20-%201.jpg",
+                                "تجاري", "للبيع", "البصرة", "الجزائر", 370, 2.7,"مليار د.ع", 3,
+                                MediaQuery.of(context).size.height/2.9, MediaQuery.of(context).size.height/5.3),
+
+                            SizedBox(height: MediaQuery.of(context).size.height/17,),
+
+
+                          ],
+                        );
+                    }),
+              ),
+
+             Container(
+               width: other_templates.width(context),
+               child: Column(
+
+               ),
+             )
+            ],
+          ),
         ),
-      ),
+      )
     );
   }
 }

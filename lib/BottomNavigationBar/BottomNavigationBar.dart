@@ -1,6 +1,10 @@
+import 'package:al_dalala/2_account/b_login/login.dart';
+import 'package:al_dalala/2_account/e_account%20details/information%20section/account_info.dart';
+import 'package:al_dalala/5_saved/saved.dart';
 import 'package:al_dalala/6_dashboard/payment/payment_type.dart';
 import 'package:flutter/material.dart';
 import 'package:al_dalala/1_home/home_page.dart';
+import '../dataa.dart';
 
 class bottomN extends StatefulWidget {
 
@@ -15,14 +19,13 @@ class _bottomNState extends State<bottomN> {
   Widget callPage(){
 
     return _widgetOptions[cureenrIndex];
-
   }
 
   static List<Widget> _widgetOptions = <Widget>[
 
-    Center(child: Text("account"),),
-    payment_type(),
-    Center(child: Text("save"),),
+    Login_state ?  account_info() : login(),
+    subscription_state ?  saved() : payment_type(),
+    saved(),
     home_page(),
 
   ];

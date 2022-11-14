@@ -41,10 +41,10 @@ class _my_propertiesState extends State<my_properties> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
 
-                            post_templates.post_residential("https://media.architecturaldigest.com/photos/57c7003fdc03716f7c8289dd/master/pass/IMG%20Worlds%20of%20Adventure%20-%201.jpg",
-                                "مشتمل", "بيع", "بغداد", "الدورة", 150, 12, "مليون د.ع",
-                                1, 2, 3, 4,
-                                MediaQuery.of(context).size.height/2.9, MediaQuery.of(context).size.height/5.3),
+                            post_templates.post_residential(context,
+                              "https://media.architecturaldigest.com/photos/57c7003fdc03716f7c8289dd/master/pass/IMG%20Worlds%20of%20Adventure%20-%201.jpg",
+                              "مشتمل", "بيع", "بغداد", "الدورة", 150, 12, "مليون د.ع",1, 2, 3, 4, true, false, "مكتب النور للعقار", "07700000", "property_describtion", true,
+                              MediaQuery.of(context).size.height/2.9, MediaQuery.of(context).size.height/5.3,),
 
                             SizedBox(height: MediaQuery.of(context).size.height/17,),
 

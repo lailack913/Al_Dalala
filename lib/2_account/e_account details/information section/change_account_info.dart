@@ -53,12 +53,12 @@ class _change_account_infoState extends State<change_account_info> {
           ),
           Container(
             color: Colors.grey,
-            height: height()/9,
+            height: height()/10,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 GestureDetector(
-                  child: Text("تعديل المعلومات", style: TextStyle(fontSize: 27,), textAlign: TextAlign.right,),
+                  child: Text("احفظ التعديل", style: TextStyle(fontSize: 27,), textAlign: TextAlign.right,),
                   onTap: (){
                     Navigator.of(context)
                         .push(MaterialPageRoute(builder: (context) => change_account_info()));

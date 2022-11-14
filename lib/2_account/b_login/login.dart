@@ -52,9 +52,6 @@ class _loginState extends State<login> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Icon(
-            Icons.arrow_back_ios_new,
-          ),
           backgroundColor: Colors.grey,
         ),
         body: Container(
@@ -116,28 +113,7 @@ class _loginState extends State<login> {
                       )));
                     },
                   ),
-
-                  Transform.translate(
-                    offset: const Offset(37, 0),
-                    child: Container(
-                      width: MediaQuery.of(context).size.width / 3,
-                      child: CheckboxListTile(
-                        title: const Text("تذكرني",
-                            style: TextStyle(
-                              color: Colors.black,
-                            )),
-                        controlAffinity: ListTileControlAffinity.trailing,
-                        activeColor: Colors.white,
-                        checkColor: Colors.blueGrey,
-                        value: check,
-                        onChanged: (value) {
-                          setState(() {
-                            check = value!;
-                          });
-                        },
-                      ),
-                    ),
-                  ),
+                  
                 ],
               ),
               Row(
@@ -152,6 +128,10 @@ class _loginState extends State<login> {
                             password = passController.text;
                           });
                           getData();
+
+                          Login_state=true;
+                          Navigator.of(context).
+                          push(MaterialPageRoute(builder: (context) => home_page()));
                         },
                         child: Text("تسجيل الدخول"),
                       ),

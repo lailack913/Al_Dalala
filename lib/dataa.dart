@@ -1,3 +1,9 @@
+
+// Global var
+var Login_state= false;
+var subscription_state=false;
+
+// api var
 var name="";
 var phone="";
 var nameup="";
@@ -22,4 +28,5 @@ var roomnumberup="";
 var kichenup="";
 var interaceup="";
 var spaceup="";
+var account_typeup="";
 

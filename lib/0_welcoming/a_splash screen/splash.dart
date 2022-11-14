@@ -13,7 +13,7 @@ class splash extends StatefulWidget {
 class _splashState extends State<splash> {
   Future Delay() async{
     await Future.delayed( const Duration(seconds: 3));
-    Navigator.push(context, MaterialPageRoute(builder: (context) => first_time()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => bottomN()));
   }
   @override
   void initState(){
@@ -25,10 +25,13 @@ class _splashState extends State<splash> {
     return Scaffold(
       backgroundColor: Colors.black26,
       body:
-      Container(
-        height: 73, width: 73,
-        color: Colors.white70,
-      ),
+      Center(
+        child:
+        Container(
+          height: 73, width: 73,
+          color: Colors.white70,
+        ),
+      )
     );
   }
 }

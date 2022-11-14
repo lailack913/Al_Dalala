@@ -1,8 +1,10 @@
-import 'dart:io';
 import 'dart:async';
+import 'package:al_dalala/templates/other_templates.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+
 class view_residetial extends StatefulWidget {
 
   final String  residential_type2;
@@ -88,40 +90,69 @@ class _view_residetialState extends State<view_residetial> {
     // onPressed calls using this URL are not gated on a 'canLaunch' check
     // because the assumption is that every device can launch a web URL.
     final Uri toLaunch =
-    Uri(scheme: 'https', host: 'www.google.org', path: 'headers/');
+    Uri(scheme: 'https', host: 'www.google.org', );
     return Scaffold(
       body:
         SafeArea(
           child: Container(
             child: ListView(
               children: [
+
                 Stack(
                   children: [
-                    Container(
-                      height: height()/3.3,
-                      color: Colors.grey,
+                    CarouselSlider(
+                      items: [
+                        Container(
+                          color: Colors.blueAccent,
+                        ),
+                        Container(
+                          color: Colors.brown,
+                        ),
+                        Container(
+                          color: Colors.green,
+                        )
+                      ],
+                      options:
+                      CarouselOptions(
+                        height: other_templates.height(context)/3,
+                        aspectRatio: 16/9,
+                        viewportFraction: 1,
+                        initialPage: 0,
+                        enableInfiniteScroll: false,
+                        reverse: true,
+                        autoPlay: false,
+                        autoPlayInterval: Duration(seconds: 7),
+                        autoPlayAnimationDuration: Duration(milliseconds: 800),
+                        scrollDirection: Axis.horizontal,
+                      ),
+
                     ),
+
                     Positioned(
-                      top: 6,
+                      top: 13,
                       right: 10,
                       child: Container(
-                          padding: EdgeInsets.only(left: 0),
-                          width: width()/9,
-                          height: height()/13,
+                          width: other_templates.width(context)/9,
+                          height: other_templates.height(context)/15,
                           decoration: BoxDecoration(
                               color: Colors.white.withOpacity(0.5),
                               borderRadius: BorderRadius.circular(13),
-                              boxShadow: []),
-                          child: Icon(
-                            Icons.bookmark_border,
-                            color: Colors.grey,
-                            size: 30,
-                          )),
+                              ),
+                          child: Center(
+                            child:  Icon(
+                              Icons.bookmark_border,
+                              color: Colors.grey,
+                              size: 45,
+                            ),
+                          )
+                      ),
                     )
                   ],
                 ),
+                
+
                 Container(
-                  padding: EdgeInsets.fromLTRB(0, 33, 37, 13),
+                  padding: EdgeInsets.fromLTRB(0, 33, 19, 13),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
@@ -133,7 +164,7 @@ class _view_residetialState extends State<view_residetial> {
                         mainAxisAlignment:MainAxisAlignment.end,
                         children: [
                           Text("النزال: ${widget.area2} م ", style: TextStyle(fontSize: 27, fontWeight: FontWeight.w500),),
-                          SizedBox(width: width()/20,),
+                          SizedBox(width: other_templates.width(context)/20,),
                           Text("الواجهة: ${widget.area2} م ", style: TextStyle(fontSize: 27, fontWeight: FontWeight.w500),),
                         ],
                       ),
@@ -145,8 +176,8 @@ class _view_residetialState extends State<view_residetial> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    rooms("حمام", widget.bathroom2, Icon(Icons.account_balance_wallet_outlined, size: 30,)),
-                    rooms("غرف", widget.room2, Icon(Icons.account_balance_wallet_outlined, size: 30,)),
+                    rooms("حمام", widget.bathroom2, Icon(Icons.bathtub_outlined, size: 30,)),
+                    rooms("غرف", widget.room2, Icon(Icons.bed_outlined, size: 37,)),
 
                   ],
                 ),
@@ -154,8 +185,8 @@ class _view_residetialState extends State<view_residetial> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    rooms("مطبخ", widget.kitchen2, Icon(Icons.account_balance_wallet_outlined, size: 30,)),
-                    rooms("صالة", widget.hall2, Icon(Icons.account_balance_wallet_outlined, size: 30,)),
+                    rooms("مطبخ", widget.kitchen2, Icon(Icons.soup_kitchen_outlined, size: 37,)),
+                    rooms("صالة", widget.hall2, Icon(Icons.living_outlined, size: 37,)),
                   ],
                 ),
 
@@ -166,15 +197,15 @@ class _view_residetialState extends State<view_residetial> {
                       Row(
                         children: [
                           Text("حديقة", style: TextStyle(fontSize: 27, fontWeight: FontWeight.w500),),
-                          SizedBox(width: width()/20,),
+                          SizedBox(width: other_templates.width(context)/20,),
                           Icon( widget.garden2 ?  Icons.check:Icons.close,),
                         ],
                       ),
-                      SizedBox(width: width()/5,),
+                      SizedBox(width: other_templates.width(context)/5,),
                       Row(
                         children: [
                           Text("كراج", style: TextStyle(fontSize: 27, fontWeight: FontWeight.w500),),
-                          SizedBox(width: width()/20,),
+                          SizedBox(width: other_templates.width(context)/20,),
                           Icon( widget.carage2 ?  Icons.check:Icons.close,),
                         ],
                       ),
@@ -182,7 +213,7 @@ class _view_residetialState extends State<view_residetial> {
                   ),
                 ),
                 Container( height: 7, color: Colors.grey.shade300,),
-                Padding(padding: EdgeInsets.fromLTRB(0, 17, 37, 13),
+                Padding(padding: EdgeInsets.fromLTRB(0, 17, 0, 13),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -200,6 +231,10 @@ class _view_residetialState extends State<view_residetial> {
                         );
                       },
                     ),
+                    Image(
+                        height: 70, width: 70,
+                        image: NetworkImage("https://cdn.pixabay.com/photo/2016/03/22/04/23/map-1272165_960_720.png")),
+
                     Padding(padding: EdgeInsets.all(16.0)),
                     FutureBuilder<void>(future: _launched, builder: _launchStatus),
                   ],
@@ -216,25 +251,27 @@ class _view_residetialState extends State<view_residetial> {
                       ),
                     ),
                 Container( height: 7, color: Colors.grey.shade300,),
-                Padding(padding: EdgeInsets.fromLTRB(0, 17, 37, 13),
+                Padding(padding: EdgeInsets.fromLTRB(0, 17, 37, 19),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Text("ًالمالك: "+widget.owner2,style: TextStyle(fontSize:27),),
-                      Text("رقم الهاتف: "+widget.owner_phone2,style: TextStyle(fontSize:27),),
+                      Text("ًالمالك: "+widget.owner2,style: TextStyle(fontSize:23),),
+                      Text("رقم الهاتف: "+widget.owner_phone2,style: TextStyle(fontSize:23),),
 
                     ],
                   ),
                 ),
-                Container(
-                  height: height()/11,
-                  child: ElevatedButton(
-                    child: Text("حجز",style: TextStyle(fontSize: 29),) ,
-                    onPressed: (){
-                      widget.property_state2 = ! widget.property_state2;
-                    } ,
-
+                GestureDetector(
+                  child: Container(
+                    height: other_templates.height(context)/13.5,
+                    color: Colors.blueGrey,
+                    child: Center(
+                      child: Text("حجز",style: TextStyle(fontSize: 29),) ,
+                    ),
                   ),
+                  onTap: (){
+                    widget.property_state2 = ! widget.property_state2;
+                  } ,
                 )
 
               ],
@@ -243,11 +280,14 @@ class _view_residetialState extends State<view_residetial> {
         )
     );
   }
+  
+  
+  
   rooms(String  type, int number, Icon icona
       ){
     return Container(
-      height: height()/11,
-      width: width()/2.35,
+      height: other_templates.height(context)/15,
+      width: other_templates.width(context)/2.35,
       decoration: BoxDecoration(
           border: Border.all(color: Colors.grey, width: 2),
           borderRadius: BorderRadius.all(Radius.circular(11))),
@@ -260,13 +300,5 @@ class _view_residetialState extends State<view_residetial> {
         ],
       ),
     );
-  }
-  height(){
-    var height;
-    return height=MediaQuery.of(context).size.height;
-  }
-  width(){
-    var width;
-    return width=MediaQuery.of(context).size.width;
   }
 }

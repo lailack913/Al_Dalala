@@ -80,7 +80,7 @@ class _CarouselWithDotsPageState extends State<CarouselWithDotsPage> {
             style: TextStyle(
               color: Colors.teal,
               fontWeight: FontWeight.bold,
-              fontSize: 18,
+              fontSize: 27,
             ),
           ),
         ),
